@@ -12,7 +12,7 @@ Tech stack
  - python
  - socket module
 ***
-How to run
+How to run   
 python portscanner.py   
 Enter the target IP address when prompted:   
 scan IP: 127.0.0.1   
