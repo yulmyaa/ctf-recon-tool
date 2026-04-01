@@ -33,5 +33,5 @@ scan IP: 127.0.0.1
 
 
 
-This project was created for educational purposes only.
+This tool is for educational purposes only.   
 Do not use it to scan systems without proper authorization.
