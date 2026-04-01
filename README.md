@@ -30,6 +30,7 @@ scan IP: 127.0.0.1
 - Network communication using python sockets
 - Understanding of open ports and running services
 - Utilizing lists and loops in python
+***
 
 
 
