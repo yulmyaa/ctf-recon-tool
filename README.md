@@ -20,7 +20,7 @@ scan IP: 127.0.0.1
 Example output   
 [OPEN] port 135
 
-[+] open ports:
+[+] open ports:   
 135
 
 [+] total open ports: 1
