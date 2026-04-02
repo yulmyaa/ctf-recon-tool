@@ -1,4 +1,4 @@
-# python port scanner(ctf recon tool)
+# ctf recon tool(python port scanner)
 
 A simple python-based port scanner for CTF recon.
 
