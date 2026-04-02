@@ -7,7 +7,7 @@ A simple python-based port scanner for CTF recon.
 - Scans ports 1–1023
 - Detects open ports
 - Grabs service banners
-- Saves the result file
+- Saves the result .txt file
 ***
 ## Why I bulit this
  - Built for the recon phase of CTF (tryhackme)
