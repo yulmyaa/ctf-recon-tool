@@ -1,31 +1,46 @@
 
 import socket
 
-target = input("scan IP: ")
-
-print(f"\n[+] {target} scanning...\n")
-
-open_ports = []
-check_ports = 0
-
-for port in range(1, 201):
-    print(f"scanning port {port}...")
-    
+def scan_port(ip, port):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.settimeout(0.5)
-    
-    result = s.connect_ex((target, port))
-    
-    if result == 0:
-        print(f"[OPEN] port {port}")
-        open_ports.append(port)
-        check_ports += 1
-    
+    s.settimeout(0.1)
+    result = s.connect_ex((ip, port))
     s.close()
+    return result == 0
 
-print("\n[+] open ports:")
-for p in open_ports:
-    print(f"- {p}")
+def grab_banner(ip, port):
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.settimeout(0.1)
+        s.connect((ip, port))
+        banner = s.recv(1024)
+        s.close()
+        return banner.decode("utf-8").strip()
+    except:
+        return None
 
-print(f"\n[+] total open ports: {check_ports}")
+ip = input("target IP: ")
+open_ports = []
+
+for port in range(1, 1024):
+    if scan_port(ip, port):
+        banner = grab.banner(ip, port)
+        if banner:
+            print(f"[OPEN] {port} -> {banner}")
+        else:
+            print(f"[OPEN] {port}")
+        open_ports.append(port)
+
+print(f"\nopen ports: {open_ports}")
+print(f"\total open ports: {len(open_ports)}")
+
+with open("port_result.txt", "w") as f:
+    f.write("port scanning result\n")
+    f.write(f"target IP: {ip}\n\n")
+    for port in open_ports:
+        f.write("[OPEN] {port}\n")
+    f.write(f"total {len(open_ports)} ports\n")
+
+print("saved port_result.txt")
+
 
