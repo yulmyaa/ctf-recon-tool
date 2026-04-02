@@ -1,16 +1,18 @@
-# python port scanner
+# python port scanner(ctf recon tool)
 
-A simple python-based port scanner that detects open ports on a given IP address.
+A simple python-based port scanner for CTF recon.
 
 ## Features
+- Scans a target IP
 - Scans ports 1–1023
-- Displays only open ports
-- Stores open ports in a list
-- Shows the total number of open ports
+- Detects open ports
+- Grabs service banners
+- Saves the result file
 ***
-## Tech stack
- - python
- - socket module
+## Why I bulit this
+ - Built for the recon phase of CTF (tryhackme)
+ - Wanted to understand how port scanning works at code level   
+   not just run tools like nmap without knowing what's happening
 ***
 ## How to run   
 python portscanner.py   
@@ -32,10 +34,10 @@ target IP: 8.8.8.8
 saved port_result.txt
 ***   
 ## What I learned
-- Basic concepts of port scanning
-- Network communication using python sockets
-- Understanding of open ports and running services
-- Utilizing lists and loops in python
+- How port scanning works at the socket level
+- Difference between TCP(SOCK_STREAM) and UDP(SOCK_DGRAM), .connect() and .connect_ex()
+- Why some open ports return banners and others don't
+- DNS(53), TLS(853), DoT, SSH(22), FTP(21)
 ***
 
 
