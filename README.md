@@ -20,12 +20,14 @@ target IP: 8.8.8.8
 ## Example output   
 [OPEN] port 53   
 [OPEN] port 443   
+[OPEN] port 853   
 
 [+] open ports:   
 [OPEN] port 53   
 [OPEN] port 443   
+[OPEN] port 853   
 
-[+] total open ports: 1
+[+] total open ports: 3   
 
 saved port_result.txt
 ***   
